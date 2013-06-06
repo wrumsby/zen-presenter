@@ -1,0 +1,2 @@
+flickr_api_key = 0ee890512f764c59181fea709059715d
+flickr_api_secret = 8daadbd77311f410

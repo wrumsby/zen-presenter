@@ -1,0 +1,335 @@
+@import "compass/reset";
+@import "compass/css3";
+
+// 1280 x 768 sez tanya sez the av folks
+
+$slidePaddingX: 40px;
+$slidePaddingY: 20px;
+$slideHeight: 700 - ($slidePaddingY * 2);
+$slideWidth: (4/3 * $slideHeight) - ($slidePaddingX * 2);
+
+$textBackground: #222;
+
+@mixin overlay-text {
+	background-color: $textBackground;
+	color: #fff;
+    opacity: 0.8;
+}
+
+body {
+    font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+.slides {
+    position: relative;
+    top: 20px;
+    margin: 0 0 0 10000px;
+    min-width: 1000px;
+    @include transition(margin-left, 1s);
+}
+
+.slide {
+	position: relative;
+    float: left;
+    margin: 0px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px #777;
+    padding: $slidePaddingY $slidePaddingX;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    width: $slideWidth;
+    height: $slideHeight;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 1;
+   	overflow: hidden;
+    @include transition(all, .2s, ease-in-out, .2s);
+
+    pre,
+    .CodeMirror {
+    	font-size: 16px;
+    }
+
+    pre {
+    	max-width: $slideWidth - ($slidePaddingX * 2);
+    	min-width: 800px;
+    	overflow: hidden;
+	    line-height: 22px;
+	    font-family: "Courier New", monospace;
+    }
+
+    .CodeMirror,
+    .CodeMirror .CodeMirror-scroll {
+    	height: 672px;
+    	width: 800px;
+
+    	.CodeMirror-lines {
+    		padding: 0;
+    	}
+    }
+
+    .list {
+    	position: absolute;
+    	top: 0;
+    	right: 0;
+    	left: 0;
+    	padding: 10px 20px;
+    	list-style: none;
+    	text-align: center;
+		@include overlay-text;
+
+    	.item {
+    		display: inline-block;
+    		text-transform: lowercase;
+
+    		&:after {
+    			content: ' /';
+    		}
+
+    		&:last-child:after {
+    			content: '';
+    		}
+    	}
+    }
+
+    .quote {
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+    	left: 0;
+    	padding: 20px 40px;
+    	font-style: italic;
+		@include overlay-text;
+    }
+
+    .quote blockquote {
+    	font-size: 48px;
+    	line-height: 56px;
+    }
+
+    .quote blockquote:before {
+    	content: '"';
+    }
+
+    .quote blockquote:after {
+    	content: '"';
+    }
+
+    .quote .from {
+    	margin-top: 12px;
+    	font-size: 48px;
+    }
+
+    .quote .from:before {
+    	content: '- ';
+    }
+
+    .title {
+    	position: absolute;
+    	right: 0;
+    	bottom: 0px;
+    	left: 0;
+    	padding: 20px 40px;
+    	font-size: 68px;
+		@include overlay-text;
+    }
+
+    .text {
+    	position: absolute;
+    	right: 0;
+    	bottom: 300px;
+    	left: 0;
+    	text-align: center;
+    }
+
+    .html {
+		position: absolute;
+		right: 0;
+		bottom: 200px;
+		left: 0;
+		text-align: center;
+    }
+
+	.link {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: 100%;
+		text-align: center;
+		color: #fff;
+		@include overlay-text;
+		opacity: 0.2;
+		z-index: 9;
+
+		a {
+    		color: #fff;
+    		text-decoration: none;
+		    font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
+
+    		&:hover {
+    			text-decoration: underline;
+    		}
+   		}
+
+   		&:hover {
+   			opacity: 0.7;
+   		}
+    }
+
+    .twitter {
+    	position: absolute;
+    	left: 0;
+    	bottom: 40px;
+    	right: 0;
+    	width: 100%;
+    	text-align: center;
+    	font-size: 48px;
+
+    	&,
+    	a {
+	    	color: #fff;
+	    	text-decoration: none;
+    	}
+
+    	a:hover {
+    		text-decoration: underline;
+    	}
+    }
+
+    &.first {
+    	background-color: #45474d;
+
+    	.title {
+    		top: 0;
+    		background-color: transparent;
+    		letter-spacing: -1px;
+    		opacity: 1;
+    	}
+
+    	.lanyrd,
+    	.hashtag {
+    		position: absolute;
+    		right: 0;
+    		bottom: 60px;
+    		left: 0;
+    		width: 100%;
+    		text-align: center;
+			color: #fff;
+    	}
+
+    	.lanyrd {
+    		bottom: 80px;
+
+    		a {
+    			color: #fff;
+    			text-decoration: none;
+
+	    		&:hover {
+	    			text-decoration: underline;
+	    		}
+    		}
+    	}
+
+    	.hashtag {
+    		bottom: 20px;
+
+    		&:before {
+    			content: '#';
+    		}
+    	}
+    }
+
+    &.opinion:after {
+    	position: absolute;
+    	top: 40px;
+    	right: -60px;
+    	padding: 10px 60px;
+    	content: 'Opinion!';
+    	text-transform: uppercase;
+    	background-color: #f00;
+    	color: white;
+    	font-size: 32px;
+    	text-align: center;
+    	box-shadow: 0 3px 3px #555;
+    	text-shadow: 2px 2px 1px #777, -1px -1px 1px #999;
+    	@include rotate(45deg);
+    	opacity: 0.8;
+    }
+
+    &.javascript {
+		background-color: #f0db4f;
+		font-family: 'Brandon Grot W01 Bold';
+
+		.text {
+			right: 60px;
+			bottom: 80px;
+			left: auto;
+			font-size: 200px;
+			text-align: right;
+			color: #222;
+		}
+    }
+
+    &.tweet {
+		background-color: #94e4e8; //#c0deed;
+
+    	iframe {
+    		position: absolute;
+    		top: 241px;
+    		left: 189px;
+    	}
+    }
+
+    &.xero {
+		background-color: #00b7e2;
+		font-family: National, Arial, Helvetica, sans-serif;
+		color: #ffffff;
+
+		.logo {
+			display: inline-block;
+			vertical-align: middle;
+			background-image: inline-image('xero-logo.png');
+			width: 140px;
+			height: 140px;
+		}
+    }
+
+    &.wdcnz {
+    	background-color: #101010;
+    	color: #fff;
+    	font-family: 'Museo W01 500';
+    	font-size: 80px;
+    }
+
+    &.credits {
+    	font-size: 36px;
+    }
+}
+
+.slide.current {
+    z-index: 2;
+}
+
+.slide:not(.current) {
+    @include scale(0.8);
+}
+
+.zen-count {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 3px;
+	font-size: 9px;
+	background-color: #444;
+	color: #fff;
+	opacity: 0.3;
+	z-index: 10;
+}

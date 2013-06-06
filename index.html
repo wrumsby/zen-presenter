@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zen</title>
+		<link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/965ba1e4-55d2-48a4-80b5-5804afec44af.css"/>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/codemirror.css">
+		<link href="./css/screen.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<ol id="presentation" class="slides"></ol>
+		<!-- TODO: bg image via template -->
+		<!-- TODO: gist via template -->
+		<script id="slide-template" type="text/x-handlebars-template">
+			<li style="{{style}}" class="slide {{cls}} {{#if tweet}}tweet{{/if}} {{#if opinion}}opinion{{/if}} {{#if credits}}credits{{/if}}">
+				{{#if title}}
+					<div class="title">{{title}}</div>
+				{{/if}}
+				{{#if list}}
+					<div class="list">
+						{{#each list}}
+							<div class="item">{{this}}</div>
+						{{/each}}
+					</div>
+				{{/if}}
+				{{#if tweet}}
+					<blockquote class="twitter-tweet" data-conversation="none" align="center">
+						<a href="{{tweet}}"></a>
+					</blockquote>
+				{{/if}}
+				{{#if quote}}
+					<div class="quote">
+						<blockquote>{{quote.text}}</blockquote>
+						<div class="from">{{quote.from}}</div>
+					</div>
+				{{/if}}
+				{{#if text}}
+					<div class="text">{{text}}</div>
+				{{/if}}
+				{{#if html}}
+					<div class="html">{{{html}}}</div>
+				{{/if}}
+				{{#if lanyrd}}
+					<div class="lanyrd"><a href="{{lanyrd}}">{{noprotocol lanyrd}}</a></div>
+				{{/if}}
+				{{#if gist}}
+					<div class="link"><a href="{{gist}}">{{noprotocol gist}}</a></div>
+				{{/if}}
+				{{#if link}}
+					<div class="link"><a href="{{link}}">{{noprotocol link}}</a></div>
+				{{/if}}
+				{{#if hashtag}}
+					<div class="hashtag"><span>{{hashtag}}</span></div>
+				{{/if}}
+				{{#if twitter}}
+					<div class="twitter"><a href="https://twitter.com/{{twitter}}">@{{twitter}}</a></div>
+				{{/if}}
+			</li>
+		</script>
+		<script src="http://yui.yahooapis.com/3.10.0pr1/build/yui/yui-min.js"></script>
+		<script src="yui_config.js"></script>
+		<script>
+			YUI.applyConfig({
+				groups: {
+					cdnjs: {
+						async: false,
+						combine: false,
+						base: '//cdnjs.cloudflare.com/ajax/libs',
+						modules: {
+							'codemirror': {
+								path: '/codemirror/2.36.0/codemirror.min.js'
+							},
+							'codemirror-css': {
+								requires: ['codemirror'],
+								path: '/codemirror/2.36.0/css.js'
+							},
+							'codemirror-htmlmixed': {
+								requires: ['codemirror', 'codemirror-xml', 'codemirror-javascript', 'codemirror-css'],
+								path: '/codemirror/2.36.0/htmlmixed.js'
+							},
+							'codemirror-htmlembedded': {
+								requires: ['codemirror'],
+								path: '/codemirror/2.36.0/htmlembedded.js'
+							},
+							'codemirror-javascript': {
+								requires: ['codemirror'],
+								path: '/codemirror/2.36.0/javascript.js'
+							},
+							'codemirror-xml': {
+								requires: ['codemirror'],
+								path: '/codemirror/2.36.0/xml.js'
+							}
+						}
+					}
+				},
+				onProgress: function (e) {
+					if (e.data[0].name === 'codemirror') {
+						YUI.add('codemirror', function (Y) {
+							Y.CodeMirror = window.CodeMirror;
+						});
+					}
+				}
+			});
+		</script>
+		<script>
+			YUI().use('get', 'zen-app', function (Y) {
+				// TODO: change to JSONP - work out how to deal with callback
+				Y.Get.js('./slides.js', function (err, tx) {
+					var app;
+
+					if (err) {
+						return;
+					}
+
+					app = new Y.Zen.App({
+						container: '#presentation',
+						viewContainer: '#presentation',
+						slides: SLIDES
+					});
+
+					tx.purge();
+
+					app.render();
+				});
+			});
+
+			YUI().use('event-resize', 'node-base', 'node-screen', 'node-style', function (Y) {
+				var container = Y.one('#presentation'),
+					fn;
+
+				// TODO: make testable
+				fn = function () {
+					var windowHeight = container.get('winHeight'),
+						containerHeight = container.get('offsetHeight') || 722,
+						diff = windowHeight - containerHeight;
+
+					if (diff < 0) {
+						container.setStyle('top', '10px');
+					} else {
+						container.setStyle('top', (diff / 2) + 'px');
+					}
+				};
+
+				fn();
+				Y.on('windowresize', fn);
+			});
+		</script>
+	</body>
+</html>

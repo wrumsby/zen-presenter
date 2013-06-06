@@ -1,0 +1,4 @@
+{
+    "basedir": ".",
+    "glob": "test/test-runner.html"
+}
