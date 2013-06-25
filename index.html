@@ -10,6 +10,7 @@
 		<ol id="presentation" class="slides"></ol>
 		<!-- TODO: bg image via template -->
 		<!-- TODO: gist via template -->
+		<!-- twitter supports oembed - see https://dev.twitter.com/docs/embedded-tweets -->
 		<script id="slide-template" type="text/x-handlebars-template">
 			<li style="{{style}}" class="slide {{cls}} {{#if tweet}}tweet{{/if}} {{#if opinion}}opinion{{/if}} {{#if credits}}credits{{/if}}">
 				{{#if title}}
@@ -23,7 +24,7 @@
 					</div>
 				{{/if}}
 				{{#if tweet}}
-					<blockquote class="twitter-tweet" data-conversation="none" align="center">
+					<blockquote class="twitter-tweet" data-conversation="none" width="800" align="center">
 						<a href="{{tweet}}"></a>
 					</blockquote>
 				{{/if}}
@@ -56,7 +57,7 @@
 				{{/if}}
 			</li>
 		</script>
-		<script src="http://yui.yahooapis.com/3.10.0pr1/build/yui/yui-min.js"></script>
+		<script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
 		<script src="yui_config.js"></script>
 		<script>
 			YUI.applyConfig({
@@ -102,9 +103,13 @@
 			});
 		</script>
 		<script>
-			YUI().use('get', 'zen-app', function (Y) {
+			YUI().use('get', 'zen-app', 'querystring-parse', function (Y) {
 				// TODO: change to JSONP - work out how to deal with callback
-				Y.Get.js('./slides.js', function (err, tx) {
+				var search = window.location.search,
+					queryString = Y.QueryString.parse(search.substring(1)),
+					url = queryString.slides + '/slides.js';
+
+				Y.Get.js(url, function (err, tx) {
 					var app;
 
 					if (err) {
