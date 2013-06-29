@@ -103,26 +103,13 @@
 			});
 		</script>
 		<script>
-			YUI().use('get', 'zen-app', 'querystring-parse', function (Y) {
-				// TODO: change to JSONP - work out how to deal with callback
-				var search = window.location.search,
-					queryString = Y.QueryString.parse(search.substring(1)),
-					url = queryString.slides + '/slides.js';
-
-				Y.Get.js(url, function (err, tx) {
-					var app;
-
-					if (err) {
-						return;
-					}
-
-					app = new Y.Zen.App({
+			YUI().use('zen-app', 'zen-slide-source', function (Y) {
+				new Y.Zen.SlideSource().getSlides(function (slides) {
+					var app = new Y.Zen.App({
 						container: '#presentation',
 						viewContainer: '#presentation',
-						slides: SLIDES
+						slides: slides
 					});
-
-					tx.purge();
 
 					app.render();
 				});
