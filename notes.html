@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+	<style>
+		body {
+			padding: 10px;
+			font-size: 64px;
+		}
+		
+		#notes-template {
+			display: none;
+		}
+	</style>
+	<title>Notes</title>
+</head>
+<body>
+	<div id="notes"></div>
+	<div id="notes-template" type="text/x-handlebars-template">{{notes}}</div>
+	<script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
+	<script src="yui_config.js"></script>
+	<script>
+		YUI({ delayUntil: 'domready' }).use('zen-notes-view', function (Y) {
+			'use strict';
+
+			var view,
+				model;
+
+			view = new Y.Zen.NotesView({});
+			view.render();
+
+			model = view.get('model');
+
+			// TODO: should this be in the model or view?
+			window.addEventListener('message', function (event) {
+				var notes = event.data;
+
+				model.set('notes', notes);
+			}, false);
+		});
+	</script>
+</body>
+</html>

@@ -16,8 +16,11 @@ YUI.add('zen-app', function (Y) {
 
 		render: function () {
 			var slides = this.get('slides'),
+				popup,
 				model,
 				view;
+
+			popup = window.open('notes.html', 'notes');
 
 			model = new Zen.PresentationModel({
 				items: slides
@@ -25,7 +28,8 @@ YUI.add('zen-app', function (Y) {
 
 			view = new Zen.PresentationView({
 				container: this.get('container'),
-				modelList: model
+				modelList: model,
+				popup: popup
 			});
 
 			view.render();
@@ -38,6 +42,7 @@ YUI.add('zen-app', function (Y) {
 	requires: [
 		'base',
 		'app-base',
+		'zen-notes-view',
 		'zen-presentation-model',
 		'zen-presentation-view'
 	]

@@ -101,7 +101,8 @@ YUI.add('zen-presentation-view', function (Y) {
 				currentSlide = e.newVal,
 				slides = container.all('.slide'),
 				windowWidth,
-				marginLeft;
+				marginLeft,
+				notes = '';
 
 			windowWidth = body.get('winWidth');
 
@@ -118,6 +119,9 @@ YUI.add('zen-presentation-view', function (Y) {
 
 				container.setStyle('margin-left', marginLeft);
 			}
+
+			notes = (this.get('modelList').item(currentSlide).get('notes') || '');
+			this.get('popup').postMessage(notes, window.location.origin);
 		},
 
 		// TODO: unit test
