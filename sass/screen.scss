@@ -147,6 +147,11 @@ body {
     	text-align: center;
     }
 
+    &.full .text {
+		top: 0;
+		bottom: 0;
+    }
+
     .html {
 		position: absolute;
 		right: 0;
