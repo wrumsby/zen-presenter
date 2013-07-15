@@ -94,8 +94,8 @@
 					notes.on('flick', function (e) {
 						var flick = e.flick,
 							axis = flick.axis,
-							startX = flick.start.pageX,
-							endX = e.pageX,
+							startX = 0, //flick.start.pageX,
+							endX = 0, //e.pageX,
 							delta = endX - startX;
 
 						alert(axis + ' / ' + startX + ' / ' + endX);
