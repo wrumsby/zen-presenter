@@ -92,8 +92,8 @@
 						right = Y.one('#right');
 
 					notes.on('flick', function (e) {
-						var axis = flick.axis,
-							startX = flick.start.pageX,
+						var axis = e.flick.axis,
+							startX = e.flick.start.pageX,
 							endX = e.pageX,
 							delta = endX - startX;
 
@@ -108,6 +108,8 @@
 						} else if (delta > 0) {
 							view.nextSlide();
 						}
+					}, {
+						minDistance: 20
 					});
 
 					left.on('touchstart', function (e) {
