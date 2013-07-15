@@ -95,10 +95,10 @@
 						var flick = e.flick,
 							axis = flick.axis,
 							startX = flick.start.pageX,
-							endX = e.pageX,
+							endX = 0, //e.pageX,
 							delta = endX - startX;
 
-						alert(axis + ' / ' + startX + ' / ' + endX);
+						alert(e.pageX);
 
 						if (axis === 'y') {
 							return;
