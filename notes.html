@@ -87,11 +87,11 @@
 				count.render();
 
 				Y.use('node-core', 'node-event', 'event-base', 'event-touch', 'event-flick', function () {
-					var body = Y.one('body'),
+					var notes = Y.one('#notes'),
 						left = Y.one('#left'),
 						right = Y.one('#right');
 
-					body.on('flick', function (e) {
+					notes.on('flick', function (e) {
 						var axis = flick.axis,
 							startX = flick.start.pageX,
 							endX = e.pageX,
