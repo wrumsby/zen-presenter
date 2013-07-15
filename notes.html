@@ -86,11 +86,28 @@
 				view.render();
 				count.render();
 
-				Y.use('node', 'event', function () {
+				Y.use('node-core', 'node-event', 'event-base', 'event-touch', function () {
 					var left = Y.one('#left'),
 						right = Y.one('#right');
 
+
+					left.on('touchstart', function (e) {
+						e.preventDefault();
+						view.previousSlide();
+					});
+
+					left.on('click', function (e) {
+						e.preventDefault();
+						view.previousSlide();
+					});
+
+					right.on('touchstart', function (e) {
+						e.preventDefault();
+						view.nextSlide();
+					});
+
 					right.on('click', function (e) {
+						e.preventDefault();
 						view.nextSlide();
 					});
 				});
