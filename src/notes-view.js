@@ -23,7 +23,6 @@ YUI.add('zen-notes-view', function (Y) {
 
 			body.on('key', this.previousSlide, 'down:' + KEY.LEFT_ARROW, this);
 			body.on('key', this.nextSlide, 'down:' + KEY.RIGHT_ARROW, this);
-
 		},
 
 		// TODO: this is all fairly gross :(

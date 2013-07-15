@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
 	<style>
 		body {
-			padding: 10px;
+			padding: 20px 70px;
 			font-size: 64px;
 		}
 
@@ -28,6 +28,13 @@
 			bottom: 0;
 			width: 60px;
 			background-color: #999;
+			z-index: 10;
+		}
+
+
+		#left:hover,
+		#right:hover {
+			cursor: pointer;
 		}
 
 		#left {
@@ -39,16 +46,16 @@
 		}
 
 		#notes {
-			margin: 20px 60px;
+			position: static;
 		}
 	</style>
 	<title>Notes</title>
 </head>
 <body>
-	<div id="left"></div>
-	<div id="right"></div>
 	<div id="notes"></div>
 	<div id="notes-template" type="text/x-handlebars-template">{{notes}}</div>
+	<div id="left"></div>
+	<div id="right"></div>
 	<script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
 	<script src="yui_config.js"></script>
 	<script>
@@ -78,6 +85,15 @@
 
 				view.render();
 				count.render();
+
+				Y.use('node', 'event', function () {
+					var left = Y.one('#left'),
+						right = Y.one('#right');
+
+					right.on('click', function (e) {
+						view.nextSlide();
+					});
+				});
 			});
 		});
 	</script>
