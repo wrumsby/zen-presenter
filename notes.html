@@ -94,8 +94,8 @@
 					notes.on('flick', function (e) {
 						var flick = e.flick,
 							axis = flick.axis,
-							startX = 0, //flick.start.pageX,
-							endX = 0, //e.pageX,
+							startX = flick.start.pageX,
+							endX = e.pageX,
 							delta = endX - startX;
 
 						alert(axis + ' / ' + startX + ' / ' + endX);
@@ -112,7 +112,7 @@
 							view.nextSlide();
 						}
 					}, {
-						minDistance: 20
+						minDistance: 10
 					});
 
 					left.on('touchstart', function (e) {
