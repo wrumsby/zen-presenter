@@ -40,8 +40,6 @@ YUI.add('zen-presentation-view', function (Y) {
 
 			this.credits = [];
 
-			body.append('<div class="zen-count"> 1 / ' + presentationModel.size() + " </div>");
-
 			presentationModel.each(function (slideModel) {
 				var slideView,
 					photoUrl = slideModel.get('image'),
@@ -102,6 +100,7 @@ YUI.add('zen-presentation-view', function (Y) {
 				slides = container.all('.slide'),
 				windowWidth,
 				marginLeft,
+				popup = this.get('popup'),
 				notes = '';
 
 			windowWidth = body.get('winWidth');
@@ -120,8 +119,10 @@ YUI.add('zen-presentation-view', function (Y) {
 				container.setStyle('margin-left', marginLeft);
 			}
 
-			notes = (this.get('modelList').item(currentSlide).get('notes') || '');
-			this.get('popup').postMessage(notes, window.location.origin);
+			if (popup) {
+				notes = (this.get('modelList').item(currentSlide).get('notes') || '');
+				popup.postMessage(notes, window.location.origin);
+			}
 		},
 
 		// TODO: unit test

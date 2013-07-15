@@ -39,7 +39,8 @@ YUI.add('zen-presentation-model', function (Y) {
 					}
 
 					return false;
-				}
+				},
+				value: 0
 			}
 		}
 	});

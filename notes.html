@@ -7,36 +7,78 @@
 			padding: 10px;
 			font-size: 64px;
 		}
-		
+
+		.zen-count {
+			position: absolute;
+			top: 2px;
+			left: 70px;
+			font-size: 12px;
+			opacity: 0.7;
+		}
+
 		#notes-template {
 			display: none;
+		}
+
+		#left,
+		#right {
+			opacity: 0.1;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 60px;
+			background-color: #999;
+		}
+
+		#left {
+			left: 0;
+		}
+
+		#right {
+			right: 0;
+		}
+
+		#notes {
+			margin: 20px 60px;
 		}
 	</style>
 	<title>Notes</title>
 </head>
 <body>
+	<div id="left"></div>
+	<div id="right"></div>
 	<div id="notes"></div>
 	<div id="notes-template" type="text/x-handlebars-template">{{notes}}</div>
 	<script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
 	<script src="yui_config.js"></script>
 	<script>
-		YUI({ delayUntil: 'domready' }).use('zen-notes-view', function (Y) {
+		YUI({
+			delayUntil: 'domready'
+		}).use('zen-slide-source', 'zen-presentation-model', 'zen-notes-view', 'zen-count-view', function (Y) {
 			'use strict';
 
-			var view,
-				model;
+			var Zen = Y.Zen;
 
-			view = new Y.Zen.NotesView({});
-			view.render();
+			new Zen.SlideSource().getSlides(function (slides) {
+				var model,
+					count,
+					view;
 
-			model = view.get('model');
+				model = new Zen.PresentationModel({
+					items: slides
+				});
 
-			// TODO: should this be in the model or view?
-			window.addEventListener('message', function (event) {
-				var notes = event.data;
+				count = new Zen.CountView({
+					model: model
+				});
 
-				model.set('notes', notes);
-			}, false);
+				view = new Zen.NotesView({
+					modelList: model
+				});
+
+				view.render();
+				count.render();
+			});
 		});
 	</script>
 </body>

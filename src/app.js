@@ -16,24 +16,26 @@ YUI.add('zen-app', function (Y) {
 
 		render: function () {
 			var slides = this.get('slides'),
-				popup,
 				model,
-				view;
-
-			popup = window.open('notes.html', 'notes');
+				presentation,
+				count;
 
 			model = new Zen.PresentationModel({
 				items: slides
 			});
 
-			view = new Zen.PresentationView({
+			presentation = new Zen.PresentationView({
 				container: this.get('container'),
-				modelList: model,
-				popup: popup
+				modelList: model
 			});
 
-			view.render();
-			view.start();
+			count = new Zen.CountView({
+				model: model
+			});
+
+			presentation.render();
+			presentation.start();
+			count.render();
 		}
 	});
 
@@ -44,6 +46,7 @@ YUI.add('zen-app', function (Y) {
 		'app-base',
 		'zen-notes-view',
 		'zen-presentation-model',
-		'zen-presentation-view'
+		'zen-presentation-view',
+		'zen-count-view'
 	]
 });
