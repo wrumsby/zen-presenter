@@ -86,10 +86,29 @@
 				view.render();
 				count.render();
 
-				Y.use('node-core', 'node-event', 'event-base', 'event-touch', function () {
-					var left = Y.one('#left'),
+				Y.use('node-core', 'node-event', 'event-base', 'event-touch', 'event-flick', function () {
+					var body = Y.one('body'),
+						left = Y.one('#left'),
 						right = Y.one('#right');
 
+					body.on('flick', function (e) {
+						var axis = flick.axis,
+							startX = flick.start.pageX,
+							endX = e.pageX,
+							delta = endX - startX;
+
+						if (axis === 'y') {
+							return;
+						}
+
+						e.preventDefault();
+
+						if (delta < 0) {
+							view.previousSlide();
+						} else if (delta > 0) {
+							view.nextSlide();
+						}
+					});
 
 					left.on('touchstart', function (e) {
 						e.preventDefault();
