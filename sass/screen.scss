@@ -67,6 +67,7 @@ body {
     .CodeMirror .CodeMirror-scroll {
     	height: 672px;
     	width: 800px;
+    	overflow-x: hidden;
 
     	.CodeMirror-lines {
     		padding: 0;
