@@ -77,10 +77,10 @@ body {
   top: 20px;
   margin: 0 0 0 10000px;
   min-width: 1000px;
-  -webkit-transition: margin-left, 1s;
-  -moz-transition: margin-left, 1s;
-  -o-transition: margin-left, 1s;
-  transition: margin-left, 1s;
+  -webkit-transition: margin-left, 0.7s;
+  -moz-transition: margin-left, 0.7s;
+  -o-transition: margin-left, 0.7s;
+  transition: margin-left, 0.7s;
 }
 
 /* line 34, ../sass/screen.scss */
@@ -101,17 +101,22 @@ body {
   font-weight: bold;
   z-index: 1;
   overflow: hidden;
-  -webkit-transition: all, 0.2s, ease-in-out, 0.2s;
-  -moz-transition: all, 0.2s, ease-in-out, 0.2s;
-  -o-transition: all, 0.2s, ease-in-out, 0.2s;
-  transition: all, 0.2s, ease-in-out, 0.2s;
+  -webkit-transition: all, 0.4s, ease-in-out, 0.2s;
+  -moz-transition: all, 0.4s, ease-in-out, 0.2s;
+  -o-transition: all, 0.4s, ease-in-out, 0.2s;
+  transition: all, 0.4s, ease-in-out, 0.2s;
+  -webkit-transform: scale(1.4, 1.4);
+  -moz-transform: scale(1.4, 1.4);
+  -ms-transform: scale(1.4, 1.4);
+  -o-transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
 }
-/* line 54, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 .slide pre,
 .slide .CodeMirror {
   font-size: 16px;
 }
-/* line 58, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 .slide pre {
   max-width: 720px;
   min-width: 800px;
@@ -119,19 +124,19 @@ body {
   line-height: 22px;
   font-family: "Courier New", monospace;
 }
-/* line 67, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .slide .CodeMirror,
 .slide .CodeMirror .CodeMirror-scroll {
   height: 672px;
   width: 800px;
   overflow-x: hidden;
 }
-/* line 72, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .slide .CodeMirror .CodeMirror-lines,
 .slide .CodeMirror .CodeMirror-scroll .CodeMirror-lines {
   padding: 0;
 }
-/* line 77, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .slide .list {
   position: absolute;
   top: 0;
@@ -144,20 +149,20 @@ body {
   color: #fff;
   opacity: 0.8;
 }
-/* line 87, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .slide .list .item {
   display: inline-block;
   text-transform: lowercase;
 }
-/* line 91, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .slide .list .item:after {
   content: ' /';
 }
-/* line 95, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .slide .list .item:last-child:after {
   content: '';
 }
-/* line 101, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .slide .quote {
   position: absolute;
   bottom: 0;
@@ -168,29 +173,29 @@ body {
   color: #fff;
   opacity: 0.8;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .slide .quote blockquote {
   font-size: 48px;
   line-height: 56px;
 }
-/* line 115, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .slide .quote blockquote:before {
   content: '"';
 }
-/* line 119, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .slide .quote blockquote:after {
   content: '"';
 }
-/* line 123, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .slide .quote .from {
   margin-top: 12px;
   font-size: 48px;
 }
-/* line 128, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .slide .quote .from:before {
   content: '- ';
 }
-/* line 132, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 .slide .title {
   position: absolute;
   right: 0;
@@ -202,7 +207,7 @@ body {
   color: #fff;
   opacity: 0.8;
 }
-/* line 142, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .slide .text {
   position: absolute;
   right: 0;
@@ -210,12 +215,12 @@ body {
   left: 0;
   text-align: center;
 }
-/* line 150, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 .slide.full .text {
   top: 0;
   bottom: 0;
 }
-/* line 155, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 .slide .html {
   position: absolute;
   right: 0;
@@ -223,7 +228,7 @@ body {
   left: 0;
   text-align: center;
 }
-/* line 163, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .slide .link {
   position: absolute;
   right: 0;
@@ -240,21 +245,21 @@ body {
   opacity: 0.2;
   z-index: 9;
 }
-/* line 177, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 .slide .link a {
   color: #fff;
   text-decoration: none;
   font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
 }
-/* line 182, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 .slide .link a:hover {
   text-decoration: underline;
 }
-/* line 187, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .slide .link:hover {
   opacity: 0.7;
 }
-/* line 192, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .slide .twitter {
   position: absolute;
   left: 0;
@@ -264,28 +269,28 @@ body {
   text-align: center;
   font-size: 48px;
 }
-/* line 202, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .slide .twitter,
 .slide .twitter a {
   color: #fff;
   text-decoration: none;
 }
-/* line 207, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .slide .twitter a:hover {
   text-decoration: underline;
 }
-/* line 212, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 .slide.first {
   background-color: #45474d;
 }
-/* line 215, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 .slide.first .title {
   top: 0;
   background-color: transparent;
   letter-spacing: -1px;
   opacity: 1;
 }
-/* line 223, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .slide.first .lanyrd,
 .slide.first .hashtag {
   position: absolute;
@@ -296,28 +301,28 @@ body {
   text-align: center;
   color: #fff;
 }
-/* line 233, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .slide.first .lanyrd {
   bottom: 80px;
 }
-/* line 236, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .slide.first .lanyrd a {
   color: #fff;
   text-decoration: none;
 }
-/* line 240, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .slide.first .lanyrd a:hover {
   text-decoration: underline;
 }
-/* line 246, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 .slide.first .hashtag {
   bottom: 20px;
 }
-/* line 249, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 .slide.first .hashtag:before {
   content: '#';
 }
-/* line 255, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .slide.opinion:after {
   position: absolute;
   top: 40px;
@@ -338,12 +343,12 @@ body {
   transform: rotate(45deg);
   opacity: 0.8;
 }
-/* line 272, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 .slide.javascript {
   background-color: #f0db4f;
   font-family: 'Brandon Grot W01 Bold';
 }
-/* line 276, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 .slide.javascript .text {
   right: 60px;
   bottom: 80px;
@@ -352,23 +357,23 @@ body {
   text-align: right;
   color: #222;
 }
-/* line 286, ../sass/screen.scss */
+/* line 287, ../sass/screen.scss */
 .slide.tweet {
   background-color: #94e4e8;
 }
-/* line 289, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 .slide.tweet iframe {
   position: absolute;
   top: 241px;
   left: 189px;
 }
-/* line 296, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .slide.xero {
   background-color: #00b7e2;
   font-family: National, Arial, Helvetica, sans-serif;
   color: #ffffff;
 }
-/* line 301, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 .slide.xero .logo {
   display: inline-block;
   vertical-align: middle;
@@ -376,33 +381,34 @@ body {
   width: 140px;
   height: 140px;
 }
-/* line 310, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .slide.wdcnz {
   background-color: #101010;
   color: #fff;
   font-family: 'Museo W01 500';
   font-size: 80px;
 }
-/* line 317, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 .slide.credits {
   font-size: 36px;
 }
 
-/* line 322, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 .slide.current {
   z-index: 2;
 }
 
-/* line 326, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 .slide:not(.current) {
   -webkit-transform: scale(0.8, 0.8);
   -moz-transform: scale(0.8, 0.8);
   -ms-transform: scale(0.8, 0.8);
   -o-transform: scale(0.8, 0.8);
   transform: scale(0.8, 0.8);
+  opacity: 0.0;
 }
 
-/* line 330, ../sass/screen.scss */
+/* line 332, ../sass/screen.scss */
 .zen-count {
   position: absolute;
   top: 0;

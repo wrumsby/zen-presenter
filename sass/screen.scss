@@ -28,7 +28,7 @@ body {
     top: 20px;
     margin: 0 0 0 10000px;
     min-width: 1000px;
-    @include transition(margin-left, 1s);
+    @include transition(margin-left, 0.7s);
 }
 
 .slide {
@@ -48,7 +48,8 @@ body {
     font-weight: bold;
     z-index: 1;
    	overflow: hidden;
-    @include transition(all, .2s, ease-in-out, .2s);
+    @include transition(all, .4s, ease-in-out, .2s);
+    @include scale(1.4);
 
     pre,
     .CodeMirror {
@@ -325,6 +326,7 @@ body {
 
 .slide:not(.current) {
     @include scale(0.8);
+    opacity: 0.0;
 }
 
 .zen-count {
