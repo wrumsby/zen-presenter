@@ -91,29 +91,6 @@
 						left = Y.one('#left'),
 						right = Y.one('#right');
 
-					notes.on('flick', function (e) {
-						var flick = e.flick,
-							axis = flick.axis,
-							startX = flick.start.pageX,
-							endX = 0, //e.pageX,
-							delta = endX - startX;
-
-						alert(e.pageX);
-
-						if (axis === 'y') {
-							return;
-						}
-
-						e.preventDefault();
-
-						if (delta < 0) {
-							view.previousSlide();
-						} else if (delta > 0) {
-							view.nextSlide();
-						}
-					}, {
-						minDistance: 10
-					});
 
 					left.on('touchstart', function (e) {
 						e.preventDefault();
