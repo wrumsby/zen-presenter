@@ -49,11 +49,11 @@ body {
     z-index: 1;
    	overflow: hidden;
     @include transition(all, .4s, ease-in-out, .2s);
-    @include scale(1.4);
+    //@include scale(1.4);
 
-    @media screen and (max-width: 1024px) {
-    	@include scale(1.0);
-    }
+    //@media screen and (max-width: 1024px) {
+    //	@include scale(0.8);
+    //}
 
     pre,
     .CodeMirror {
