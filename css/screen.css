@@ -63,7 +63,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
+.slide.darker .title {
+  background-color: black !important;
+}
+
+/* line 28, ../sass/screen.scss */
+.slide.top-30 .title,
+.slide.top-30 .quote {
+  top: 30% !important;
+}
+
+/* line 34, ../sass/screen.scss */
 body {
   font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
   background-color: #ddd;
@@ -71,7 +82,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 .slides {
   position: relative;
   top: 20px;
@@ -83,7 +94,12 @@ body {
   transition: margin-left, 0.7s;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 49, ../sass/screen.scss */
+.slide:not(.first) .title {
+  text-align: center;
+}
+
+/* line 54, ../sass/screen.scss */
 .slide {
   position: relative;
   float: left;
@@ -106,12 +122,12 @@ body {
   -o-transition: all, 0.4s, ease-in-out, 0.2s;
   transition: all, 0.4s, ease-in-out, 0.2s;
 }
-/* line 59, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .slide pre,
 .slide .CodeMirror {
   font-size: 16px;
 }
-/* line 63, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .slide pre {
   max-width: 720px;
   min-width: 800px;
@@ -119,19 +135,19 @@ body {
   line-height: 22px;
   font-family: "Courier New", monospace;
 }
-/* line 72, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .slide .CodeMirror,
 .slide .CodeMirror .CodeMirror-scroll {
   height: 672px;
   width: 800px;
   overflow-x: hidden;
 }
-/* line 77, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 .slide .CodeMirror .CodeMirror-lines,
 .slide .CodeMirror .CodeMirror-scroll .CodeMirror-lines {
   padding: 0;
 }
-/* line 82, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .slide .list {
   position: absolute;
   top: 0;
@@ -144,65 +160,65 @@ body {
   color: #fff;
   opacity: 0.8;
 }
-/* line 92, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .slide .list .item {
   display: inline-block;
   text-transform: lowercase;
 }
-/* line 96, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .slide .list .item:after {
   content: ' /';
 }
-/* line 100, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .slide .list .item:last-child:after {
   content: '';
 }
-/* line 106, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 .slide .quote {
   position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  right: 20px;
+  top: 20%;
+  left: 20px;
   padding: 20px 40px;
   background-color: #222222;
   color: #fff;
   opacity: 0.8;
 }
-/* line 115, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 .slide .quote blockquote {
   font-size: 48px;
   line-height: 56px;
 }
-/* line 120, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .slide .quote blockquote:before {
   content: '"';
 }
-/* line 124, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .slide .quote blockquote:after {
   content: '"';
 }
-/* line 128, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .slide .quote .from {
   margin-top: 12px;
   font-size: 48px;
 }
-/* line 133, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 .slide .quote .from:before {
   content: '- ';
 }
-/* line 137, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .slide .title {
   position: absolute;
-  right: 0;
-  bottom: 0px;
-  left: 0;
+  right: 20px;
+  bottom: 40%;
+  left: 20px;
   padding: 20px 40px;
   font-size: 68px;
   background-color: #222222;
   color: #fff;
   opacity: 0.8;
 }
-/* line 147, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .slide .text {
   position: absolute;
   right: 0;
@@ -210,12 +226,12 @@ body {
   left: 0;
   text-align: center;
 }
-/* line 155, ../sass/screen.scss */
+/* line 175, ../sass/screen.scss */
 .slide.full .text {
   top: 0;
   bottom: 0;
 }
-/* line 160, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .slide .html {
   position: absolute;
   right: 0;
@@ -223,7 +239,7 @@ body {
   left: 0;
   text-align: center;
 }
-/* line 168, ../sass/screen.scss */
+/* line 188, ../sass/screen.scss */
 .slide .link {
   position: absolute;
   right: 0;
@@ -240,21 +256,21 @@ body {
   opacity: 0.2;
   z-index: 9;
 }
-/* line 182, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .slide .link a {
   color: #fff;
   text-decoration: none;
   font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
 }
-/* line 187, ../sass/screen.scss */
+/* line 207, ../sass/screen.scss */
 .slide .link a:hover {
   text-decoration: underline;
 }
-/* line 192, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 .slide .link:hover {
   opacity: 0.7;
 }
-/* line 197, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 .slide .twitter {
   position: absolute;
   left: 0;
@@ -264,28 +280,28 @@ body {
   text-align: center;
   font-size: 48px;
 }
-/* line 207, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .slide .twitter,
 .slide .twitter a {
   color: #fff;
   text-decoration: none;
 }
-/* line 212, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 .slide .twitter a:hover {
   text-decoration: underline;
 }
-/* line 217, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .slide.first {
   background-color: #45474d;
 }
-/* line 220, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 .slide.first .title {
   top: 0;
   background-color: transparent;
   letter-spacing: -1px;
   opacity: 1;
 }
-/* line 228, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 .slide.first .lanyrd,
 .slide.first .hashtag {
   position: absolute;
@@ -296,28 +312,28 @@ body {
   text-align: center;
   color: #fff;
 }
-/* line 238, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 .slide.first .lanyrd {
   bottom: 80px;
 }
-/* line 241, ../sass/screen.scss */
+/* line 261, ../sass/screen.scss */
 .slide.first .lanyrd a {
   color: #fff;
   text-decoration: none;
 }
-/* line 245, ../sass/screen.scss */
+/* line 265, ../sass/screen.scss */
 .slide.first .lanyrd a:hover {
   text-decoration: underline;
 }
-/* line 251, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 .slide.first .hashtag {
   bottom: 20px;
 }
-/* line 254, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .slide.first .hashtag:before {
   content: '#';
 }
-/* line 260, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 .slide.opinion:after {
   position: absolute;
   top: 40px;
@@ -338,12 +354,12 @@ body {
   transform: rotate(45deg);
   opacity: 0.8;
 }
-/* line 277, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 .slide.javascript {
   background-color: #f0db4f;
   font-family: 'Brandon Grot W01 Bold';
 }
-/* line 281, ../sass/screen.scss */
+/* line 301, ../sass/screen.scss */
 .slide.javascript .text {
   right: 60px;
   bottom: 80px;
@@ -352,23 +368,23 @@ body {
   text-align: right;
   color: #222;
 }
-/* line 291, ../sass/screen.scss */
+/* line 311, ../sass/screen.scss */
 .slide.tweet {
   background-color: #94e4e8;
 }
-/* line 294, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 .slide.tweet iframe {
   position: absolute;
   top: 241px;
   left: 189px;
 }
-/* line 301, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 .slide.xero {
   background-color: #00b7e2;
   font-family: National, Arial, Helvetica, sans-serif;
   color: #ffffff;
 }
-/* line 306, ../sass/screen.scss */
+/* line 326, ../sass/screen.scss */
 .slide.xero .logo {
   display: inline-block;
   vertical-align: middle;
@@ -376,24 +392,24 @@ body {
   width: 140px;
   height: 140px;
 }
-/* line 315, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .slide.wdcnz {
   background-color: #101010;
   color: #fff;
   font-family: 'Museo W01 500';
   font-size: 80px;
 }
-/* line 322, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 .slide.credits {
   font-size: 36px;
 }
 
-/* line 327, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 .slide.current {
   z-index: 2;
 }
 
-/* line 331, ../sass/screen.scss */
+/* line 351, ../sass/screen.scss */
 .slide:not(.current) {
   -webkit-transform: scale(0.8, 0.8);
   -moz-transform: scale(0.8, 0.8);
@@ -403,7 +419,7 @@ body {
   opacity: 0.0;
 }
 
-/* line 336, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 .zen-count {
   position: absolute;
   top: 0;

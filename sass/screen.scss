@@ -16,6 +16,21 @@ $textBackground: #222;
     opacity: 0.8;
 }
 
+.slide.darker {
+	.title {
+		background-color: darken($textBackground, 20%) !important;
+	}
+}
+
+.slide {
+	&.top-30 {
+		.title,
+		.quote {
+			top: 30% !important;
+		}
+	}
+}
+
 body {
     font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
     background-color: #ddd;
@@ -30,6 +45,11 @@ body {
     min-width: 1000px;
     @include transition(margin-left, 0.7s);
 }
+
+.slide:not(.first) .title {
+	text-align: center;
+}
+
 
 .slide {
 	position: relative;
@@ -105,9 +125,9 @@ body {
 
     .quote {
     	position: absolute;
-    	bottom: 0;
-    	right: 0;
-    	left: 0;
+    	right: 20px;
+    	top: 20%;
+    	left: 20px;
     	padding: 20px 40px;
     	@include overlay-text;
     }
@@ -136,9 +156,9 @@ body {
 
     .title {
     	position: absolute;
-    	right: 0;
-    	bottom: 0px;
-    	left: 0;
+    	right: 20px;
+    	bottom: 40%;
+    	left: 20px;
     	padding: 20px 40px;
     	font-size: 68px;
 		@include overlay-text;
