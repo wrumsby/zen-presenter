@@ -163,24 +163,18 @@ body {
   padding: 10px 20px;
   list-style: none;
   text-align: center;
+}
+/* line 118, ../sass/screen.scss */
+.slide .list .item {
   background-color: #222222;
   color: #fff;
   opacity: 0.8;
-}
-/* line 119, ../sass/screen.scss */
-.slide .list .item {
+  margin: 10px 20px;
+  padding: 10px 20px;
   display: inline-block;
   text-transform: lowercase;
 }
-/* line 123, ../sass/screen.scss */
-.slide .list .item:after {
-  content: ' /';
-}
 /* line 127, ../sass/screen.scss */
-.slide .list .item:last-child:after {
-  content: '';
-}
-/* line 133, ../sass/screen.scss */
 .slide .quote {
   position: absolute;
   right: 20px;
@@ -191,29 +185,29 @@ body {
   color: #fff;
   opacity: 0.8;
 }
-/* line 142, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .slide .quote blockquote {
   font-size: 48px;
   line-height: 56px;
 }
-/* line 147, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .slide .quote blockquote:before {
   content: '"';
 }
-/* line 151, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .slide .quote blockquote:after {
   content: '"';
 }
-/* line 155, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .slide .quote .from {
   margin-top: 12px;
   font-size: 48px;
 }
-/* line 160, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .slide .quote .from:before {
   content: '- ';
 }
-/* line 164, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 .slide .title {
   position: absolute;
   right: 20px;
@@ -225,7 +219,7 @@ body {
   color: #fff;
   opacity: 0.8;
 }
-/* line 174, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .slide .text {
   position: absolute;
   right: 0;
@@ -233,12 +227,12 @@ body {
   left: 0;
   text-align: center;
 }
-/* line 182, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 .slide.full .text {
   top: 0;
   bottom: 0;
 }
-/* line 187, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .slide .html {
   position: absolute;
   right: 0;
@@ -246,7 +240,7 @@ body {
   left: 0;
   text-align: center;
 }
-/* line 195, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 .slide .link {
   position: absolute;
   right: 20px;
@@ -263,21 +257,21 @@ body {
   z-index: 9;
   transition: opacity 500ms;
 }
-/* line 209, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .slide .link a {
   color: #fff;
   text-decoration: none;
   font-family: 'FrutigerLTW01-55Roman', Open Sans, Arial, Helvetica, sans-serif;
 }
-/* line 214, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .slide .link a:hover {
   text-decoration: underline;
 }
-/* line 219, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 .slide .link:hover {
   opacity: 0.7;
 }
-/* line 224, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 .slide .twitter {
   position: absolute;
   left: 0;
@@ -287,28 +281,28 @@ body {
   text-align: center;
   font-size: 48px;
 }
-/* line 234, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 .slide .twitter,
 .slide .twitter a {
   color: #fff;
   text-decoration: none;
 }
-/* line 239, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 .slide .twitter a:hover {
   text-decoration: underline;
 }
-/* line 244, ../sass/screen.scss */
+/* line 238, ../sass/screen.scss */
 .slide.first {
   background-color: #45474d;
 }
-/* line 247, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 .slide.first .title {
   top: 0;
   background-color: transparent;
   letter-spacing: -1px;
   opacity: 1;
 }
-/* line 255, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .slide.first .lanyrd,
 .slide.first .hashtag {
   position: absolute;
@@ -319,28 +313,28 @@ body {
   text-align: center;
   color: #fff;
 }
-/* line 265, ../sass/screen.scss */
+/* line 259, ../sass/screen.scss */
 .slide.first .lanyrd {
   bottom: 80px;
 }
-/* line 268, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .slide.first .lanyrd a {
   color: #fff;
   text-decoration: none;
 }
-/* line 272, ../sass/screen.scss */
+/* line 266, ../sass/screen.scss */
 .slide.first .lanyrd a:hover {
   text-decoration: underline;
 }
-/* line 278, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 .slide.first .hashtag {
   bottom: 20px;
 }
-/* line 281, ../sass/screen.scss */
+/* line 275, ../sass/screen.scss */
 .slide.first .hashtag:before {
   content: '#';
 }
-/* line 287, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 .slide.opinion:after {
   position: absolute;
   top: 40px;
@@ -361,12 +355,12 @@ body {
   transform: rotate(45deg);
   opacity: 0.8;
 }
-/* line 304, ../sass/screen.scss */
+/* line 298, ../sass/screen.scss */
 .slide.javascript {
   background-color: #f0db4f;
   font-family: 'Brandon Grot W01 Bold';
 }
-/* line 308, ../sass/screen.scss */
+/* line 302, ../sass/screen.scss */
 .slide.javascript .text {
   right: 60px;
   bottom: 80px;
@@ -375,23 +369,23 @@ body {
   text-align: right;
   color: #222;
 }
-/* line 318, ../sass/screen.scss */
+/* line 312, ../sass/screen.scss */
 .slide.tweet {
   background-color: #94e4e8;
 }
-/* line 321, ../sass/screen.scss */
+/* line 315, ../sass/screen.scss */
 .slide.tweet iframe {
   position: absolute;
   top: 241px;
   left: 189px;
 }
-/* line 328, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
 .slide.xero {
   background-color: #00b7e2;
   font-family: National, Arial, Helvetica, sans-serif;
   color: #ffffff;
 }
-/* line 333, ../sass/screen.scss */
+/* line 327, ../sass/screen.scss */
 .slide.xero .logo {
   display: inline-block;
   vertical-align: middle;
@@ -399,24 +393,24 @@ body {
   width: 140px;
   height: 140px;
 }
-/* line 342, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 .slide.wdcnz {
   background-color: #101010;
   color: #fff;
   font-family: 'Museo W01 500';
   font-size: 80px;
 }
-/* line 349, ../sass/screen.scss */
+/* line 343, ../sass/screen.scss */
 .slide.credits {
   font-size: 36px;
 }
 
-/* line 354, ../sass/screen.scss */
+/* line 348, ../sass/screen.scss */
 .slide.current {
   z-index: 2;
 }
 
-/* line 358, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 .slide:not(.current) {
   -webkit-transform: scale(0.8, 0.8);
   -moz-transform: scale(0.8, 0.8);
@@ -426,7 +420,7 @@ body {
   opacity: 0.0;
 }
 
-/* line 363, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 .zen-count {
   position: absolute;
   top: 0;
